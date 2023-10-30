@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="951bb1f4-e2e8-4459-af14-375992331d12" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/cloudformation/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudformation/exporter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudformation/exporter_chamada_http.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudformation/requirements" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/stack.yml" beforeDir="false" afterPath="$PROJECT_DIR$/stack.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

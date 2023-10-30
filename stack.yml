@@ -47,8 +47,8 @@ Resources:
   MyContainer:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-008d819eefb4b5ee4
-      InstanceType: t2.medium
+      ImageId: ami-0fc5d935ebf8bc3bc
+      InstanceType: t2.micro
       SecurityGroupIds:
         - !Ref MySecurityGroup
       UserData:
@@ -65,10 +65,6 @@ Resources:
           cd ~
 
           curl -L "https://github.com/GabrielPauloMai/observability-OpenWeather/archive/master.tar.gz" | tar -xz --strip-components=2 "observability-OpenWeather-master/cloudformation"
-
-          curl -L "https://github.com/billykwooten/openweather-exporter/archive/master.tar.gz" | tar -xz --strip-components=1 "openweather-exporter"
-
-          sudo sysctl -w vm.max_map_count=262144
 
           sudo docker-compose up -d
 
