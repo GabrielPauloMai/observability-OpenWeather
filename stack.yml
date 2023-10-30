@@ -9,27 +9,39 @@ Resources:
       GroupDescription: Habilita acesso ao servidor
       SecurityGroupIngress:
         - IpProtocol: tcp
-          FromPort: 22
+          FromPort: 22 # SSH
           ToPort: 22
           CidrIp: 0.0.0.0/0
+
         - IpProtocol: tcp
-          FromPort: 80
+          FromPort: 80 # Nginx
           ToPort: 80
           CidrIp: 0.0.0.0/0
+
         - IpProtocol: tcp
-          FromPort: 3000
+          FromPort: 3000 # Grafana
           ToPort: 3000
           CidrIp: 0.0.0.0/0
+
         - IpProtocol: tcp
-          FromPort: 8080
+          FromPort: 8080 # Cadvisor
           ToPort: 8080
           CidrIp: 0.0.0.0/0
+
         - IpProtocol: tcp
-          FromPort: 9000
+          FromPort: 9000 # Prometheus
           ToPort: 9000
           CidrIp: 0.0.0.0/0
 
+        - IpProtocol: tcp
+          FromPort: 9091 # OpenWeather
+          ToPort: 9091
+          CidrIp: 0.0.0.0/0
 
+        - IpProtocol: tcp
+          FromPort: 9093 # AlertManager
+          ToPort: 9093
+          CidrIp: 0.0.0.0/0
 
 
   MyContainer:
@@ -52,17 +64,14 @@ Resources:
 
           cd ~
 
-          curl -L "https://github.com/GabrielPauloMai/observability/archive/master.tar.gz" | tar -xz --strip-components=2 "observability-master/cloudformation"
+          curl -L "https://github.com/GabrielPauloMai/observability-OpenWeather/archive/master.tar.gz" | tar -xz --strip-components=2 "observability-OpenWeather-master/cloudformation"
+
+          curl -L "https://github.com/billykwooten/openweather-exporter/archive/master.tar.gz" | tar -xz --strip-components=1 "openweather-exporter"
 
           sudo sysctl -w vm.max_map_count=262144
 
-          echo "INSTANCE_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)" > .env
+          sudo docker-compose up -d
 
-          sudo docker-compose  --env-file .env up -d
-
-          echo "GRAYLOG_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' root_graylog_1)" >> .env
-
-          sudo docker-compose  --env-file .env up -d
           
 
           
