@@ -1,0 +1,76 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Stack para observabilidade na AWS
+
+Resources:
+
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Habilita acesso ao servidor
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 3000
+          ToPort: 3000
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 9000
+          ToPort: 9000
+          CidrIp: 0.0.0.0/0
+
+
+
+
+  MyContainer:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-008d819eefb4b5ee4
+      InstanceType: t2.medium
+      SecurityGroupIds:
+        - !Ref MySecurityGroup
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          sudo -i
+          apt-get update -y
+          apt-get install -y docker.io
+          usermod -aG docker ubuntu
+          systemctl enable docker
+          curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          chmod +x /usr/local/bin/docker-compose
+
+          cd ~
+
+          curl -L "https://github.com/GabrielPauloMai/observability/archive/master.tar.gz" | tar -xz --strip-components=2 "observability-master/cloudformation"
+
+          sudo sysctl -w vm.max_map_count=262144
+
+          echo "INSTANCE_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)" > .env
+
+          sudo docker-compose  --env-file .env up -d
+
+          echo "GRAYLOG_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' root_graylog_1)" >> .env
+
+          sudo docker-compose  --env-file .env up -d
+          
+
+          
+          
+  
+Outputs:
+  InstanceIp:
+    Description: IP da instancia
+    Value: !GetAtt MyContainer.PublicIp
+    Export:
+      Name: InstanceIp
