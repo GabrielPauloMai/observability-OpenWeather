@@ -26,17 +26,7 @@ scrape_configs:
     static_configs:
       - targets: ['YOUR_NETDATA_IP:19999']
 
-  - job_name: 'openweather-recife'
+  - job_name: 'openweather'
     scrape_interval: 5s
     static_configs:
-      - targets: ['openweather-recife:9091']
-
-  - job_name: 'openweather-maringa'
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['openweather-maringa:9092']
-
-  - job_name: 'openweather-santiago'
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['openweather-santiago:9095']
+      - targets: ['openweather-recife:9091', 'openweather-maringa:9091', 'openweather-santiago:9091']
