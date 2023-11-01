@@ -29,7 +29,12 @@ Resources:
           CidrIp: 0.0.0.0/0
 
         - IpProtocol: tcp
-          FromPort: 9000 # Prometheus
+          FromPort: 9090 # Prometheus
+          ToPort: 9090
+          CidrIp: 0.0.0.0/0
+
+        - IpProtocol: tcp
+          FromPort: 9000 # Graylog
           ToPort: 9000
           CidrIp: 0.0.0.0/0
 
@@ -47,8 +52,8 @@ Resources:
   MyContainer:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0fc5d935ebf8bc3bc
-      InstanceType: t2.micro
+      ImageId: ami-008d819eefb4b5ee4
+      InstanceType: t2.medium
       SecurityGroupIds:
         - !Ref MySecurityGroup
       UserData:
@@ -66,13 +71,13 @@ Resources:
 
           curl -L "https://github.com/GabrielPauloMai/observability-OpenWeather/archive/master.tar.gz" | tar -xz --strip-components=2 "observability-OpenWeather-master/cloudformation"
 
-          sudo docker-compose up -d
+          sudo sysctl -w vm.max_map_count=262144
 
-          
+          echo "INSTANCE_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)" > .env
 
-          
-          
-  
+          sudo docker-compose --env-file .env up -d
+
+
 Outputs:
   InstanceIp:
     Description: IP da instancia
