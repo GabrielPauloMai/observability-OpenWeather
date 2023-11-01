@@ -44,6 +44,17 @@ Resources:
           CidrIp: 0.0.0.0/0
 
         - IpProtocol: tcp
+          FromPort: 9092 # OpenWeather
+          ToPort: 9092
+          CidrIp: 0.0.0.0/0
+
+        - IpProtocol: tcp
+          FromPort: 9095 # OpenWeather
+          ToPort: 9095
+          CidrIp: 0.0.0.0/0
+
+
+        - IpProtocol: tcp
           FromPort: 9093 # AlertManager
           ToPort: 9093
           CidrIp: 0.0.0.0/0
@@ -78,9 +89,3 @@ Resources:
           sudo docker-compose --env-file .env up -d
 
 
-Outputs:
-  InstanceIp:
-    Description: IP da instancia
-    Value: !GetAtt MyContainer.PublicIp
-    Export:
-      Name: InstanceIp

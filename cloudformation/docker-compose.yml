@@ -38,9 +38,9 @@ services:
       - grafana-data:/var/lib/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning
 
-  openweather-exporter:
+  openweather-recife:
     image: billykwooten/openweather-exporter
-    container_name: openweather-exporter
+    container_name: openweather-recife
     networks:
       - backend
     restart: always
@@ -48,6 +48,38 @@ services:
       - "9091:9091"
     environment:
       - OW_CITY=Recife, PE
+      - OW_APIKEY=1513eca1f54788514d8fd0c5adc05be2
+      - OW_ENABLE_POL=true
+      - OW_ENABLE_UV=true
+      - OW_DEGREES_UNIT=C
+      - OW_LANGUAGE=PT
+
+  openweather-maringa:
+    image: billykwooten/openweather-exporter
+    container_name: openweather-maringa
+    networks:
+      - backend
+    restart: always
+    ports:
+      - "9092:9091"
+    environment:
+      - OW_CITY=Maringá, PR
+      - OW_APIKEY=1513eca1f54788514d8fd0c5adc05be2
+      - OW_ENABLE_POL=true
+      - OW_ENABLE_UV=true
+      - OW_DEGREES_UNIT=C
+      - OW_LANGUAGE=PT
+
+  openweather-santiago:
+    image: billykwooten/openweather-exporter
+    container_name: openweather-santiago
+    networks:
+      - backend
+    restart: always
+    ports:
+      - "9095:9091"
+    environment:
+      - OW_CITY=Santiago, CL
       - OW_APIKEY=1513eca1f54788514d8fd0c5adc05be2
       - OW_ENABLE_POL=true
       - OW_ENABLE_UV=true
