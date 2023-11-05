@@ -14,7 +14,12 @@ Resources:
           CidrIp: 0.0.0.0/0
 
         - IpProtocol: tcp
-          FromPort: 80 # Nginx
+          FromPort: 80 # App
+          ToPort: 5000
+          CidrIp: 0.0.0.0/0
+
+        - IpProtocol: tcp
+          FromPort: 8080 # Nginx
           ToPort: 80
           CidrIp: 0.0.0.0/0
 
@@ -83,6 +88,10 @@ Resources:
           curl -L "https://github.com/GabrielPauloMai/observability-OpenWeather/archive/master.tar.gz" | tar -xz --strip-components=2 "observability-OpenWeather-master/cloudformation"
 
           sudo sysctl -w vm.max_map_count=262144
+
+          cd homepage
+
+          docker build -f Dockerfile -t homepage .          
 
           echo "INSTANCE_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)" > .env
 

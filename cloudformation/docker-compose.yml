@@ -135,10 +135,10 @@ services:
     environment:
       - GRAYLOG_HTTP_EXTERNAL_URI=http://${INSTANCE_IP}:9000/
 
-  home:
-    image: exporter:0.1
+  homepage:
+    image: homepage
     ports:
-      - 8895:8895
+      - 5000:5000
     networks:
       - backend
 

@@ -28,11 +28,15 @@ def weather():
         info_clima = {
             'cidade': cidade,
             'temperatura': dados_clima['main']['temp'],
+            'sensacao_termica': dados_clima['main']['feels_like'],
+            'umidade': dados_clima['main']['humidity'],
+            'velocidade_vento': dados_clima['wind']['speed'],
             'descricao': dados_clima['weather'][0]['description'],
+            'icon_code': dados_clima['weather'][0]['icon'],
         }
         return render_template('weather.html', weather=info_clima)
     else:
         return render_template('error.html', error=f"Falha ao obter dados de clima para {cidade}")
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)

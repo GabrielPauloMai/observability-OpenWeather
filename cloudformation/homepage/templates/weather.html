@@ -1,9 +1,14 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <div class="result-container mt-4">
+<div class="result-container mt-4">
         <h2 class="text-center">{{ weather.cidade }}</h2>
+        <img src="{{ url_for('static', filename='icons/' ~ weather.icon_code ~ '.png') }}" alt="Weather Icon" class="weather-icon mx-auto d-block">
+        <p class="text-center">Temperatura: {{ weather.temperature }}°C</p>
         <p class="text-center">Temperatura: {{ weather.temperatura }}°C</p>
+        <p class="text-center">Sensação Térmica: {{ weather.sensacao_termica }}°C</p>
+        <p class="text-center">Umidade: {{ weather.umidade }}%</p>
+        <p class="text-center">Velocidade do Vento: {{ weather.velocidade_vento }} m/s</p>
         <p class="text-center">Descrição: {{ weather.descricao }}</p>
     </div>
 {% endblock %}
