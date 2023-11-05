@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, request, redirect
 from api import OpenWeatherAPI
 from prometheus_client import start_http_server, Counter, Histogram, Gauge
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
 from time import time
 
 app = Flask(__name__)
