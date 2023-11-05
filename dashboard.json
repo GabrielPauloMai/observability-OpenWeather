@@ -21,7 +21,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 9710,
   "graphTooltip": 2,
-  "id": 3,
+  "id": 1,
   "links": [
     {
       "icon": "doc",
@@ -34,6 +34,21 @@
   ],
   "liveNow": false,
   "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 209,
+      "panels": [],
+      "repeat": "job",
+      "repeatDirection": "h",
+      "title": "Maringa",
+      "type": "row"
+    },
     {
       "datasource": {
         "type": "prometheus",
@@ -83,7 +98,7 @@
         "h": 6,
         "w": 4,
         "x": 0,
-        "y": 0
+        "y": 1
       },
       "id": 2,
       "links": [],
@@ -107,8 +122,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_temperature{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_temperature{location=\"Maringá, PR\",job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -128,6 +144,7 @@
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -159,7 +176,7 @@
           ]
         }
       ],
-      "title": "Temperature",
+      "title": "Temperatura",
       "type": "gauge"
     },
     {
@@ -208,9 +225,9 @@
         "h": 6,
         "w": 4,
         "x": 4,
-        "y": 0
+        "y": 1
       },
-      "id": 3,
+      "id": 211,
       "links": [],
       "options": {
         "orientation": "horizontal",
@@ -232,8 +249,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_windspeed{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_windspeed{location=\"Maringá, PR\", job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -253,6 +271,7 @@
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -284,7 +303,7 @@
           ]
         }
       ],
-      "title": "Wind speed",
+      "title": "Velocidade do vento",
       "type": "gauge"
     },
     {
@@ -410,9 +429,9 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 0
+        "y": 1
       },
-      "id": 11,
+      "id": 212,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -436,8 +455,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_winddegree{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_winddegree{location=\"Maringá, PR\", job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -457,6 +477,7 @@
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -488,7 +509,7 @@
           ]
         }
       ],
-      "title": "Wind direction",
+      "title": "Direção do vento",
       "type": "stat"
     },
     {
@@ -538,9 +559,9 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 0
+        "y": 1
       },
-      "id": 5,
+      "id": 214,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -564,8 +585,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_pressure{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_pressure{location=\"Maringá, PR\", job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -585,6 +607,7 @@
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -616,7 +639,7 @@
           ]
         }
       ],
-      "title": "Atmospheric pressure",
+      "title": "Pressão atmosférica",
       "type": "stat"
     },
     {
@@ -661,9 +684,9 @@
         "h": 6,
         "w": 4,
         "x": 16,
-        "y": 0
+        "y": 1
       },
-      "id": 9,
+      "id": 216,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -687,8 +710,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_currentconditions{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_currentconditions{location=\"Maringá, PR\", job=~\"$job\"}",
           "groupBy": [],
           "instant": true,
           "interval": "",
@@ -723,7 +747,7 @@
           ]
         }
       ],
-      "title": "Weather condition",
+      "title": "Condição do clima",
       "type": "stat"
     },
     {
@@ -760,7 +784,7 @@
               }
             ]
           },
-          "unit": "dateTimeAsUS"
+          "unit": "dateTimeAsLocal"
         },
         "overrides": []
       },
@@ -768,9 +792,9 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 0
+        "y": 1
       },
-      "id": 13,
+      "id": 217,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -794,8 +818,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_sunrise{location=~\"$city\",job=~\"$job\"} * 1000",
+          "expr": "openweather_sunrise{location=\"Maringá, PR\", job=~\"$job\"} * 1000",
           "groupBy": [
             {
               "params": [
@@ -815,6 +840,7 @@
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -852,7 +878,7 @@
           ]
         }
       ],
-      "title": "Sunrise time",
+      "title": "Nascer do sol",
       "type": "stat"
     },
     {
@@ -899,9 +925,9 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 3
+        "y": 4
       },
-      "id": 7,
+      "id": 213,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -925,8 +951,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_cloudiness{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_cloudiness{location=\"Maringá, PR\", job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -946,6 +973,7 @@
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -977,7 +1005,7 @@
           ]
         }
       ],
-      "title": "Cloudiness",
+      "title": "Nebulosidade",
       "type": "stat"
     },
     {
@@ -1024,9 +1052,9 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 3
+        "y": 4
       },
-      "id": 6,
+      "id": 215,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -1050,8 +1078,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_humidity{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_humidity{location=\"Maringá, PR\", job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -1071,6 +1100,7 @@
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1102,7 +1132,7 @@
           ]
         }
       ],
-      "title": "Humidity",
+      "title": "Umidade",
       "type": "stat"
     },
     {
@@ -1139,7 +1169,7 @@
               }
             ]
           },
-          "unit": "dateTimeAsUS"
+          "unit": "dateTimeAsLocal"
         },
         "overrides": []
       },
@@ -1147,9 +1177,9 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 3
+        "y": 4
       },
-      "id": 14,
+      "id": 218,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -1173,8 +1203,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_sunset{location=~\"$city\",job=~\"$job\"} * 1000",
+          "expr": "openweather_sunset{location=\"Maringá, PR\", job=~\"$job\"} * 1000",
           "groupBy": [
             {
               "params": [
@@ -1194,6 +1225,7 @@
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1231,72 +1263,100 @@
           ]
         }
       ],
-      "title": "Sunset time",
+      "title": "Por do sol",
       "type": "stat"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 208,
+      "panels": [],
+      "repeat": "city",
+      "repeatDirection": "h",
+      "title": "Santiago",
+      "type": "row"
+    },
+    {
       "datasource": {
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
-          "links": [],
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 45,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#447ebc",
+                "value": null
+              },
+              {
+                "color": "#629e51",
+                "value": 15
+              },
+              {
+                "color": "#e24d42",
+                "value": 30
+              }
+            ]
+          },
           "unit": "celsius"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
-        "h": 9,
-        "w": 12,
+        "h": 6,
+        "w": 4,
         "x": 0,
-        "y": 6
+        "y": 8
       },
-      "hiddenSeries": false,
-      "id": 200,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
+      "id": 210,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
       },
-      "percentage": false,
       "pluginVersion": "10.0.0",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
-          "alias": "$tag_name, $tag_sys_country",
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "builder",
           "exemplar": true,
-          "expr": "openweather_temperature{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_temperature{location=\"Santiago, CL\", job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -1306,28 +1366,17 @@
             },
             {
               "params": [
-                "sys_country"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "name"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
+                "null"
               ],
               "type": "fill"
             }
           ],
           "interval": "",
-          "legendFormat": "Temperature",
+          "legendFormat": "",
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1359,39 +1408,1277 @@
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Temperature",
-      "tooltip": {
-        "shared": true,
-        "sort": 1,
-        "value_type": "individual"
+      "title": "Temperatura",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:642",
-          "format": "celsius",
-          "logBase": 1,
-          "max": "105",
-          "min": "-5",
-          "show": true
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 1,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 50,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#629e51",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 14
+              },
+              {
+                "color": "red",
+                "value": 32
+              }
+            ]
+          },
+          "unit": "velocitymph"
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 4,
+        "y": 8
+      },
+      "id": 3,
+      "links": [],
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
         {
-          "$$hashKey": "object:643",
-          "format": "short",
-          "logBase": 1,
-          "show": false
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "exemplar": true,
+          "expr": "openweather_windspeed{location=\"Santiago, CL\", job=~\"$job\"}",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "interval": "",
+          "legendFormat": "",
+          "measurement": "openweathermap",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "range": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "wind_speed"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "sys_country",
+              "operator": "=~",
+              "value": "/^$country$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$city$/"
+            }
+          ]
         }
       ],
-      "yaxis": {
-        "align": false
-      }
+      "title": "Velocidade do vento",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "from": 0,
+                "result": {
+                  "text": "↓"
+                },
+                "to": 22.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 22.5,
+                "result": {
+                  "text": "↙"
+                },
+                "to": 77.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 77.5,
+                "result": {
+                  "text": "←"
+                },
+                "to": 112.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 112.5,
+                "result": {
+                  "text": "↖"
+                },
+                "to": 157.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 157.5,
+                "result": {
+                  "text": "↑"
+                },
+                "to": 202.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 202.5,
+                "result": {
+                  "text": "↗"
+                },
+                "to": 247.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 247.5,
+                "result": {
+                  "text": "→"
+                },
+                "to": 292.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 292.5,
+                "result": {
+                  "text": "↘"
+                },
+                "to": 337.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 337.5,
+                "result": {
+                  "text": "↓"
+                },
+                "to": 360
+              },
+              "type": "range"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 8,
+        "y": 8
+      },
+      "id": 11,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "exemplar": true,
+          "expr": "openweather_winddegree{location=\"Santiago, CL\", job=~\"$job\"}",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "interval": "",
+          "legendFormat": "",
+          "measurement": "openweathermap",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "range": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "wind_deg"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "sys_country",
+              "operator": "=~",
+              "value": "/^$country$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$city$/"
+            }
+          ]
+        }
+      ],
+      "title": "Direção do vento",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#5794F2",
+                "value": null
+              },
+              {
+                "color": "#629e51",
+                "value": 1013.93
+              },
+              {
+                "color": "#ef843c",
+                "value": 1018.75
+              }
+            ]
+          },
+          "unit": "pressurehpa"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 12,
+        "y": 8
+      },
+      "id": 5,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "exemplar": true,
+          "expr": "openweather_pressure{location=\"Santiago, CL\", job=~\"$job\"}",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "interval": "",
+          "legendFormat": "",
+          "measurement": "openweathermap",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "range": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "main_pressure"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "sys_country",
+              "operator": "=~",
+              "value": "/^$country$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$city$/"
+            }
+          ]
+        }
+      ],
+      "title": "Pressão atmosférica",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 16,
+        "y": 8
+      },
+      "id": 9,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "name"
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "exemplar": true,
+          "expr": "openweather_currentconditions{location=\"Santiago, CL\", job=~\"$job\"}",
+          "groupBy": [],
+          "instant": true,
+          "interval": "",
+          "legendFormat": "{{currentconditions}}",
+          "measurement": "openweathermap",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "weather_0_description"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "sys_country",
+              "operator": "=~",
+              "value": "/^$country$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$city$/"
+            }
+          ]
+        }
+      ],
+      "title": "Condição do clima",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "dateTimeAsLocal"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 20,
+        "y": 8
+      },
+      "id": 13,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "exemplar": true,
+          "expr": "openweather_sunrise{location=\"Santiago, CL\", job=~\"$job\"} * 1000",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "interval": "",
+          "legendFormat": "",
+          "measurement": "openweathermap",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "range": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "sys_sunrise"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "*1000"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "sys_country",
+              "operator": "=~",
+              "value": "/^$country$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$city$/"
+            }
+          ]
+        }
+      ],
+      "title": "Nascer do sol",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "decimals": 0,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 8,
+        "y": 11
+      },
+      "id": 7,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "exemplar": true,
+          "expr": "openweather_cloudiness{location=\"Santiago, CL\", job=~\"$job\"}",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "interval": "",
+          "legendFormat": "",
+          "measurement": "openweathermap",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "range": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "clouds_all"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "sys_country",
+              "operator": "=~",
+              "value": "/^$country$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$city$/"
+            }
+          ]
+        }
+      ],
+      "title": "Nebulosidade",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "decimals": 0,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 12,
+        "y": 11
+      },
+      "id": 6,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "exemplar": true,
+          "expr": "openweather_humidity{location=\"Santiago, CL\", job=~\"$job\"}",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "interval": "",
+          "legendFormat": "",
+          "measurement": "openweathermap",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "range": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "main_humidity"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "sys_country",
+              "operator": "=~",
+              "value": "/^$country$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$city$/"
+            }
+          ]
+        }
+      ],
+      "title": "Umidade",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "dateTimeAsLocal"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 20,
+        "y": 11
+      },
+      "id": 14,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "exemplar": true,
+          "expr": "openweather_sunset{location=\"Santiago, CL\", job=~\"$job\"} * 1000",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "interval": "",
+          "legendFormat": "",
+          "measurement": "openweathermap",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "range": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "sys_sunset"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "*1000"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "sys_country",
+              "operator": "=~",
+              "value": "/^$country$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$city$/"
+            }
+          ]
+        }
+      ],
+      "title": "Por do sol",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 50,
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "Santiago, CL"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 14
+      },
+      "id": 200,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "alias": "$tag_name, $tag_sys_country",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "openweather_temperature{job=~\"$job\"}",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "sys_country"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "interval": "",
+          "legendFormat": "{{location}}",
+          "measurement": "openweathermap",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "range": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "main_temp"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "sys_country",
+              "operator": "=~",
+              "value": "/^$country$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$city$/"
+            }
+          ]
+        }
+      ],
+      "title": "Temperatura",
+      "type": "timeseries"
     },
     {
       "aliasColors": {},
@@ -1415,7 +2702,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 6
+        "y": 14
       },
       "hiddenSeries": false,
       "id": 205,
@@ -1454,8 +2741,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "openweather_humidity{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_humidity{job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -1483,10 +2771,11 @@
             }
           ],
           "interval": "",
-          "legendFormat": "Humidity",
+          "legendFormat": "{{location}}",
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1520,7 +2809,7 @@
       ],
       "thresholds": [],
       "timeRegions": [],
-      "title": "Humidity",
+      "title": "Umidade",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1575,7 +2864,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 15
+        "y": 23
       },
       "hiddenSeries": false,
       "id": 204,
@@ -1614,8 +2903,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "openweather_pressure{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_pressure{job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -1643,10 +2933,11 @@
             }
           ],
           "interval": "",
-          "legendFormat": "Atmospheric Pressure",
+          "legendFormat": "{{location}}",
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1680,7 +2971,7 @@
       ],
       "thresholds": [],
       "timeRegions": [],
-      "title": "Atmospheric pressure",
+      "title": "Pressão atmosférica",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1695,7 +2986,7 @@
       "yaxes": [
         {
           "$$hashKey": "object:2654",
-          "format": "pressurehpa",
+          "format": "pressurepa",
           "logBase": 1,
           "show": true
         },
@@ -1711,58 +3002,85 @@
       }
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "velocitykmh"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 15
+        "y": 23
       },
-      "hiddenSeries": false,
       "id": 202,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.0.0",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "$tag_name, $tag_sys_country",
@@ -1770,8 +3088,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "openweather_windspeed{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_windspeed{job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -1799,10 +3118,11 @@
             }
           ],
           "interval": "",
-          "legendFormat": "Wind Speed",
+          "legendFormat": "{{location}}",
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1834,37 +3154,8 @@
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Wind speed",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:2059",
-          "format": "velocitymph",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:2060",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "title": "Velocidade do vento",
+      "type": "timeseries"
     },
     {
       "aliasColors": {
@@ -1890,7 +3181,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 24
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 206,
@@ -1929,8 +3220,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "openweather_cloudiness{location=~\"$city\",job=~\"$job\"}",
+          "expr": "openweather_cloudiness{job=~\"$job\"}",
           "groupBy": [
             {
               "params": [
@@ -1958,10 +3250,11 @@
             }
           ],
           "interval": "",
-          "legendFormat": "Cloudiness",
+          "legendFormat": "{{location}}",
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1995,7 +3288,7 @@
       ],
       "thresholds": [],
       "timeRegions": [],
-      "title": "Cloudiness",
+      "title": "Nebulosidade",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2051,7 +3344,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 24
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 207,
@@ -2090,8 +3383,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "openweather_rain1h{location=~\"$city\",job=~\"$job\"} / 25.4",
+          "expr": "openweather_rain1h{job=~\"$job\"} / 25.4",
           "groupBy": [
             {
               "params": [
@@ -2119,10 +3413,11 @@
             }
           ],
           "interval": "",
-          "legendFormat": "Rain",
+          "legendFormat": "{{location}}",
           "measurement": "openweathermap",
           "orderByTime": "ASC",
           "policy": "default",
+          "range": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2156,7 +3451,7 @@
       ],
       "thresholds": [],
       "timeRegions": [],
-      "title": "Rain in last hour",
+      "title": "Chuvas na última hora",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2172,7 +3467,7 @@
         {
           "$$hashKey": "object:2801",
           "decimals": 2,
-          "format": "inches",
+          "format": "mlitre",
           "logBase": 1,
           "show": true
         },
@@ -2197,8 +3492,8 @@
       {
         "current": {
           "selected": false,
-          "text": "Recife, PE",
-          "value": "Recife, PE"
+          "text": "Maringá, PR",
+          "value": "Maringá, PR"
         },
         "datasource": {
           "type": "prometheus",
@@ -2225,8 +3520,8 @@
       {
         "current": {
           "selected": false,
-          "text": "openweather-exporter",
-          "value": "openweather-exporter"
+          "text": "openweather",
+          "value": "openweather"
         },
         "datasource": {
           "type": "prometheus",
@@ -2281,8 +3576,8 @@
     ]
   },
   "timezone": "",
-  "title": "Open Weather Copy",
+  "title": "Open Weather",
   "uid": "a2ac5d88-47c5-48f2-a13d-a944c7f4e32e",
-  "version": 1,
+  "version": 14,
   "weekStart": ""
 }
