@@ -30,3 +30,8 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['openweather-recife:9091', 'openweather-maringa:9091', 'openweather-santiago:9091']
+    
+  - job_name: 'homepage'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['homepage:5000']

@@ -137,6 +137,7 @@ services:
 
   homepage:
     image: homepage
+    container_name: homepage
     ports:
       - 5000:5000
     networks:
