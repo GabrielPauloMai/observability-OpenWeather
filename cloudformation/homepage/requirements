@@ -1,0 +1,4 @@
+requests
+prometheus-client
+prometheus_client
+flask

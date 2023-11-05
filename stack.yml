@@ -14,12 +14,12 @@ Resources:
           CidrIp: 0.0.0.0/0
 
         - IpProtocol: tcp
-          FromPort: 80 # App
+          FromPort: 5000 # App
           ToPort: 5000
           CidrIp: 0.0.0.0/0
 
         - IpProtocol: tcp
-          FromPort: 8080 # Nginx
+          FromPort: 80 # Nginx
           ToPort: 80
           CidrIp: 0.0.0.0/0
 
@@ -91,7 +91,9 @@ Resources:
 
           cd homepage
 
-          docker build -f Dockerfile -t homepage .          
+          docker build -f Dockerfile -t homepage .   
+
+          cd ..       
 
           echo "INSTANCE_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)" > .env
 
