@@ -1,5 +1,6 @@
 requests
 prometheus-client
-prometheus_client
 flask
-graylog-logger
+glogcli
+graylog
+Flask-Graylog2
