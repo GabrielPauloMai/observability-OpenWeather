@@ -6,3 +6,4 @@ graylog
 Flask-Graylog2
 MarkupSafe==1.1.1
 graypy
+pygelf
