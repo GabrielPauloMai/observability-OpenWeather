@@ -29,21 +29,21 @@ Após a conclusão da configuração, você pode acessar as seguintes ferramenta
 - MongoDB e Elasticsearch estão configurados para armazenar logs das aplicações.
 Configure o Input do Graylog para receber os logs da Homepage, conforme instruções abaixo:
 - System -> Inputs -> Select Input -> GELF TCP -> Launch new input -> Title: Homepage -> Save
- ![GRAYLOG](image\graylog.jpg)
+ ![GRAYLOG](image/graylog.jpg)
 
 ### 4. Criação de Dashboards no Grafana
 
 Importe o dashboard do Prometheus:Dashboard -> Import -> Upload JSON file
 Selecione o arquivo: dashboard.json -> Selecione o data source: Prometheus -> Import
 
-![Logo do Meu Projeto](image\screencapture-34-232-72-239-3000-d-a2ac5d88-47c5-48f2-a13d-a944c7f4e32e-open-weather-copy-2023-11-05-18_07_06.png)
+![Logo do Meu Projeto](image/dashboard.png)
 
 ### 5. Acesso a Homepage
 
 Acesse a tela inicial da aplicação em `http://seu-endereco-ip:5000`.
 Pesquise por uma cidade e clique em "Search". A aplicação irá retornar o clima atual da cidade pesquisada.
 
-![Homepage](image\homepage.jpg)
+![Homepage](image/homepage.jpg)
 
 
 
@@ -54,10 +54,10 @@ e criar dashboards no Grafana para monitorar métricas.
 
 Alguns exemplos de logs e métricas que podem ser monitorados:
 
-![logs](image\log1.jpg)
-![logs](image\log2.jpg)
-![logs](image\log3.jpg)
-![logs](image\log4.jpg)
+![logs](image/log1.jpg)
+![logs](image/log2.jpg)
+![logs](image/log3.jpg)
+![logs](image/log4.jpg)
 
 
 
