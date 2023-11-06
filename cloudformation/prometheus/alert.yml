@@ -4,32 +4,32 @@
       - alert: InstanceDown
         expr: up{job="services"} < 1
         for: 5m
-      - alert: HighTemperature
+      - alert: HighTemperature1
         expr: openweather_temperature{instance="openweather-maringa:9091", job="openweather", location="Maringá, PR"} > 40
         for: 5m
         annotations:
           summary: Temperatura muito alta em Maringá
-      - alert: HighTemperature
+      - alert: HighTemperature2
         expr: openweather_temperature{instance="openweather-recife:9091", job="openweather", location="Recife, PE"} > 40
         for: 5m
         annotations:
           summary: Temperatura muito alta em Recife
-      - alert: HighTemperature
+      - alert: HighTemperature3
         expr: openweather_temperature{instance="openweather-santiago:9091", job="openweather", location="Santiago, CL"} > 40
         for: 5m
         annotations:
           summary: Temperatura muito alta em Santiago
-      - alert: HighTemperature
+      - alert: HighTemperature4
         expr: openweather_temperature{instance="openweather-maringa:9091", job="openweather", location="Maringá, PR"} < 5
         for: 5m
         annotations:
           summary: Temperatura muito alta em Maringá
-      - alert: HighTemperature
+      - alert: HighTemperature5
         expr: openweather_temperature{instance="openweather-recife:9091", job="openweather", location="Recife, PE"} < 5
         for: 5m
         annotations:
           summary: Temperatura muito alta em Recife
-      - alert: HighTemperature
+      - alert: HighTemperature6
         expr: openweather_temperature{instance="openweather-santiago:9091", job="openweather", location="Santiago, CL"} < 5
         for: 5m
         annotations:
