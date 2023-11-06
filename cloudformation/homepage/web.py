@@ -4,8 +4,13 @@ from api import OpenWeatherAPI
 from prometheus_client import start_http_server, Counter, Histogram, Gauge
 from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
 from time import time
+import logging
 
 app = Flask(__name__)
+
+# Configurando o sistema de log
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Métricas para monitorar as requisições HTTP
 request_counter = Counter('http_requests_total', 'Total HTTP Requests', ["status_code", "instance"])
@@ -35,6 +40,10 @@ def index():
     request_counter.labels(status_code='200', instance='homepage').inc()
     request_duration = time() - start_time
     request_duration_histogram.labels(endpoint='index', status_code='200', instance='homepage').observe(request_duration)
+    
+    # Log de informações
+    logger.info(f"Successful request to /index with status code 200 in {request_duration:.4f} seconds.")
+    
     return render_template('index.html')
 
 @app.route('/weather', methods=['POST'])
@@ -45,6 +54,10 @@ def weather():
         dados_clima = weather_api.get_weather_by_city(cidade)
     except TypeError as e:
         request_counter.labels(instance='homepage', status_code='404').inc()
+        
+        # Log de erro
+        logger.error(f"Error: {e}")
+        
         return render_template('error.html', error=e)
 
     if dados_clima:
@@ -60,9 +73,17 @@ def weather():
         request_counter.labels(instance='homepage', status_code='200').inc()
         weather_api_request_duration = time() - start_time
         weather_api_request_duration_histogram.labels(method='get_weather_by_city', instance='homepage').observe(weather_api_request_duration)
+        
+        # Log de informações
+        logger.info(f"Successful request to /weather with status code 200 in {weather_api_request_duration:.4f} seconds.")
+        
         return render_template('weather.html', weather=info_clima)
     else:
         request_counter.labels(instance='homepage', status_code='404').inc()
+        
+        # Log de erro
+        logger.error(f"Falha ao obter dados de clima para {cidade}")
+        
         return render_template('error.html', error=f"Falha ao obter dados de clima para {cidade}")
 
 if __name__ == '__main__':
