@@ -5,15 +5,15 @@ from prometheus_client import start_http_server, Counter, Histogram, Gauge
 from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
 from time import time
 import logging
-from graylog_handler import GELFTCPHandler
+from pygelf import GelfTcpHandler
 
 app = Flask(__name__)
 
 # Configurando o sistema de log
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-gratlog_handler = GELFTCPHandler(host='root_graylog_1', port=12201)
-logger.addHandler(gratlog_handler)
+logger.addHandler(GelfTcpHandler(host='root_graylog_1', port=12201))
+
 
 # Métricas para monitorar as requisições HTTP
 request_counter = Counter('http_requests_total', 'Total HTTP Requests', ["status_code", "instance"])

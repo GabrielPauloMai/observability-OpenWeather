@@ -1,7 +1,7 @@
 import requests
 from prometheus_client import Counter, Gauge, Histogram
 import logging
-from graylog_handler import GELFTCPHandler
+from pygelf import GelfTcpHandler
 
 class OpenWeatherAPI:
     
@@ -21,11 +21,10 @@ class OpenWeatherAPI:
 
         logging.basicConfig(level=logging.INFO)
         self.logger = logging.getLogger(__name__)
-        self.gratlog_handler = GELFTCPHandler(host='root_graylog_1', port=12201)
-        self.logger.addHandler(self.gratlog_handler)
+        self.logger.addHandler(GelfTcpHandler(host='root_graylog_1', port=12201))
 
     def log_request(self, method, instance, payload=None,status_code=None, duration=None):
-        logging.info(f"method={method} instance={instance} payload={payload} status_code={status_code} duration={duration}")
+        self.logger.info(f"method={method} instance={instance} payload={payload} status_code={status_code} duration={duration}")
         
 
     def get_city(self, name):
